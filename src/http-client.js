@@ -296,7 +296,7 @@ export default opts => {
     allOrdersOCO: payload => privCall('/api/v3/allOrderList', payload),
 
     spotAccountInfo: payload => privCall('/api/v3/account', payload),
-    lendingAccountInfo: payload => privCall('/api/v3/account', payload),
+    lendingAccountInfo: payload => privCall('/sapi/v1/lending/union/account', payload),
     myTrades: payload => privCall('/api/v3/myTrades', payload),
 
     withdraw: payload => privCall('/wapi/v3/withdraw.html', payload, 'POST'),
