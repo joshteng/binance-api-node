@@ -1,6 +1,6 @@
 // tslint:disable:interface-name
 declare module 'binance-api-node' {
-  export default function(options?: {
+  export default function (options?: {
     apiKey: string
     apiSecret: string
     getTime?: () => number | Promise<number>
@@ -154,10 +154,10 @@ declare module 'binance-api-node' {
     }
   }
 
-  export type GetOrderOptions = {symbol: string, orderId: number} | {symbol: string, origClientOrderId: string}
+  export type GetOrderOptions = { symbol: string, orderId: number } | { symbol: string, origClientOrderId: string }
 
   export interface Binance {
-    accountInfo(options?: { useServerTime: boolean }): Promise<Account>
+    spotAccountInfo(options?: { useServerTime: boolean }): Promise<Account>
     tradeFee(): Promise<TradeFeeResult>
     aggTrades(options?: {
       symbol: string
@@ -186,7 +186,7 @@ declare module 'binance-api-node' {
       fromId?: number
       useServerTime?: boolean
     }): Promise<MyTrade[]>
-    getOrder(options: GetOrderOptions & {useServerTime?: boolean}): Promise<QueryOrderResult>
+    getOrder(options: GetOrderOptions & { useServerTime?: boolean }): Promise<QueryOrderResult>
     cancelOrder(options: {
       symbol: string
       orderId: number
